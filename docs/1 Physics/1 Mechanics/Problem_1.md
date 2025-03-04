@@ -1,6 +1,6 @@
 # Problem 1
 
-### **Projectile Motion: Detailed Description with Formulas**  
+ **Projectile Motion: Detailed Description with Formulas**  
 
 **Projectile motion** is the motion of an object under the influence of gravity after being projected into the air. It follows a **parabolic trajectory** and can be analyzed by breaking it into two independent components:  
 
