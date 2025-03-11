@@ -15,7 +15,6 @@ The total time the projectile remains in the air is determined by the vertical m
 \[
 T = \frac{2 u \sin\theta}{g}
 \]
-
 Where:  
 - \( u \) = Initial velocity  
 - \( \theta \) = Angle of projection  
