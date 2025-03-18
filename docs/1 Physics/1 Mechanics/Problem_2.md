@@ -70,3 +70,4 @@ Automobiles – Suspension systems, steering mechanisms
 Robotics – Robotic arms, gripper mechanisms
 Manufacturing Machines – Punching machines, presses
 Bicycles – Pedal mechanisms
+![alt text](image.png)
