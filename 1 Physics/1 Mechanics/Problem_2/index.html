@@ -129,7 +129,7 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
-<p>A four-bar linkage consists of four rigid links connected by four revolute joints, allowing for a mechanical motion transfer between input and output links.</p>
+<p>A four-bar linkage consists of four rigid links connected by four revolute joints, allowing motion transfer between input and output links.</p>
 <p>Types of Four-Bar Linkages:
 Crank-Rocker Mechanism – One link rotates fully, and another oscillates.
 Double Crank Mechanism – Both links rotate completely.
@@ -137,202 +137,46 @@ Double Rocker Mechanism – Both links oscillate.
 Drag-Link Mechanism – The shortest link is the ground, and both moving links rotate fully.
 Key Equations in Four-Bar Linkage
 1. Grashof’s Criterion (Mobility Condition)
-To determine if at least one link can rotate completely, we use:</p>
-<p>𝑆
-+
-𝐿
-≤
-𝑃
-+
-𝑄
-S+L≤P+Q
-Where:</p>
-<p>𝑆
+To determine if at least one link can rotate completely, we use the following condition:</p>
+<p>S + L ≤ P + Q</p>
+<p>Where:
 S = Shortest link
-𝐿
 L = Longest link
-𝑃
-P, 
-𝑄
-Q = The other two links
+P, Q = The other two links
 If this condition is satisfied, the mechanism allows continuous motion.</p>
 <ol>
 <li>Velocity Analysis (Relative Velocity Equation)
-Using the Instantaneous Center Method, the velocity of a point on a link is given by:</li>
+The velocity of a point on a link can be calculated using the Instantaneous Center Method:</li>
 </ol>
-<h1 id="v">𝑉</h1>
-<p>𝜔
-×
-𝑟
-V=ω×r
-Where:</p>
-<p>𝑉
-V = Linear velocity
-𝜔
-ω = Angular velocity
-𝑟
-r = Distance from the pivot
-For two links in a four-bar mechanism, we use:</p>
-<p>𝜔
-2
-𝜔
-1
-=
-𝐿
-1
-𝐿
-2
-ω 
-1
-​</p>
-<p>ω 
-2
-​</p>
-<p>​
- = 
-L 
-2
-​</p>
-<p>L 
-1
-​</p>
-<p>​</p>
+<p>V = ω × r</p>
 <p>Where:</p>
-<p>𝜔
-1
-,
-𝜔
-2
-ω 
-1
-​
- ,ω 
-2
-​
-  = Angular velocities of two links
-𝐿
-1
-,
-𝐿
-2
-L 
-1
-​
- ,L 
-2
-​
-  = Lengths of the respective links
-3. Acceleration Analysis (Coriolis Acceleration)
-The acceleration of a point in a four-bar linkage is:</p>
-<h1 id="a">𝑎</h1>
-<p>𝛼
-×
-𝑟
-+
-𝜔
-2
-×
-𝑟
-a=α×r+ω 
-2
- ×r
-Where:</p>
-<p>𝑎
-a = Acceleration
-𝛼
-α = Angular acceleration
-𝜔
+<p>V = Linear velocity
 ω = Angular velocity
-𝑟
 r = Distance from the pivot
-For a slider-crank mechanism (a special case of a four-bar linkage), the Coriolis acceleration is given by:</p>
-<p>𝑎
-𝑐
-=
-2
-𝜔
-𝑣
-a 
-c
-​
- =2ωv
-Where:</p>
-<p>𝑎
-𝑐
-a 
-c
-​
-  = Coriolis acceleration
-𝑣
+For two links in a four-bar mechanism, the ratio of angular velocities is:</p>
+<p>ω₂ / ω₁ = L₁ / L₂</p>
+<p>Where:</p>
+<p>ω₁, ω₂ = Angular velocities of two links
+L₁, L₂ = Lengths of the respective links
+3. Acceleration Analysis (Coriolis Acceleration)
+The total acceleration of a point in a four-bar linkage is the sum of two components:</p>
+<p>a = α × r + ω² × r</p>
+<p>Where:
+a = Acceleration
+α = Angular acceleration
+ω = Angular velocity
+r = Distance from the pivot
+For a slider-crank mechanism (a special case of a four-bar linkage), the Coriolis acceleration is:</p>
+<p>aᶜ = 2ωv</p>
+<p>Where:</p>
+<p>aᶜ = Coriolis acceleration
 v = Velocity of the slider
 4. Transmission Angle (μ)
-The transmission angle determines the efficiency of force transfer:</p>
-<h1 id="_1">𝜇</h1>
-<p>cos
-⁡
-−
-1
-(
-𝐿
-2
-2
-+
-𝐿
-3
-2
-−
-𝐿
-4
-2
-2
-𝐿
-2
-𝐿
-3
-)
-μ=cos 
-−1
- ( 
-2L 
-2
-​
- L 
-3
-​</p>
-<p>L 
-2
-2
-​
- +L 
-3
-2
-​
- −L 
-4
-2
-​</p>
-<p>​
- )
-Where:</p>
-<p>𝐿
-2
-,
-𝐿
-3
-,
-𝐿
-4
-L 
-2
-​
- ,L 
-3
-​
- ,L 
-4
-​
-  = Link lengths
-The best efficiency occurs when μ is close to 90°.</p>
+The transmission angle determines the efficiency of force transfer in the linkage mechanism:</p>
+<p>μ = cos⁻¹ [(L₂² + L₃² - L₄²) / (2 L₂ L₃)]</p>
+<p>Where:</p>
+<p>L₂, L₃, L₄ = Lengths of the links
+The best efficiency occurs when the transmission angle μ is close to 90°.</p>
 <p>Applications of Four-Bar Linkages
 Automobiles – Suspension systems, steering mechanisms
 Robotics – Robotic arms, gripper mechanisms
