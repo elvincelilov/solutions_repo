@@ -1,12 +1,12 @@
 # Problem 2
 
-A four-bar linkage is one of the simplest and most widely used mechanisms in machines. It consists of four rigid links connected by four revolute joints, allowing motion transfer between input and output links.
+A four-bar linkage consists of four rigid links connected by four revolute joints, allowing for a mechanical motion transfer between input and output links.
 
 Types of Four-Bar Linkages:
-Crank-Rocker Mechanism – One link rotates fully, while another oscillates.
-Double Crank Mechanism – Two links rotate completely.
+Crank-Rocker Mechanism – One link rotates fully, and another oscillates.
+Double Crank Mechanism – Both links rotate completely.
 Double Rocker Mechanism – Both links oscillate.
-Drag-Link Mechanism – The shortest link is the ground, allowing full rotation of both moving links.
+Drag-Link Mechanism – The shortest link is the ground, and both moving links rotate fully.
 Key Equations in Four-Bar Linkage
 1. Grashof’s Criterion (Mobility Condition)
 To determine if at least one link can rotate completely, we use:
@@ -28,7 +28,7 @@ L = Longest link
 𝑃
 P, 
 𝑄
-Q = Other two links
+Q = The other two links
 If this condition is satisfied, the mechanism allows continuous motion.
 
 2. Velocity Analysis (Relative Velocity Equation)
@@ -131,7 +131,7 @@ a = Acceleration
 ω = Angular velocity
 𝑟
 r = Distance from the pivot
-For a slider-crank mechanism (a special case of four-bar linkage), the Coriolis acceleration is given by:
+For a slider-crank mechanism (a special case of a four-bar linkage), the Coriolis acceleration is given by:
 
 𝑎
 𝑐
@@ -153,7 +153,7 @@ c
   = Coriolis acceleration
 𝑣
 v = Velocity of the slider
-4. Transmission Angle (𝛍)
+4. Transmission Angle (μ)
 The transmission angle determines the efficiency of force transfer:
 
 𝜇
@@ -205,7 +205,7 @@ L
  
 ​
  )
-where:
+Where:
 
 𝐿
 2
@@ -225,10 +225,10 @@ L
 4
 ​
   = Link lengths
-The best efficiency occurs when 𝛍 is close to 90°.
+The best efficiency occurs when μ is close to 90°.
 
 Applications of Four-Bar Linkages
 Automobiles – Suspension systems, steering mechanisms
-Robotics – Robotic arms, gripping mechanisms
+Robotics – Robotic arms, gripper mechanisms
 Manufacturing Machines – Punching machines, presses
 Bicycles – Pedal mechanisms
