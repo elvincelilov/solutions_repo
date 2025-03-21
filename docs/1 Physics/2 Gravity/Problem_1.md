@@ -1,8 +1,5 @@
 # Problem 1
 # Orbital Period and Orbital Radius
-Got it! 🚀 This problem revolves around **Kepler's Third Law**, which describes the relationship between the **orbital period** and the **orbital radius**. Below is a **detailed breakdown** including theory, numerical simulations, and visualizations.
-
----
 
 # **Orbital Period and Orbital Radius**  
 
