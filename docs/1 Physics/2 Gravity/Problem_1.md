@@ -1,5 +1,4 @@
 # Problem 1
-# Orbital Period and Orbital Radius
 
 # **Orbital Period and Orbital Radius**  
 
