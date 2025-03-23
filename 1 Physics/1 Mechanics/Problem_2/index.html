@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 2 - Physics and Mathematics</title>
+<title>Investigating the Dynamics of a Forced Damped Pendulum - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 2";
+        var mkdocs_page_name = "Investigating the Dynamics of a Forced Damped Pendulum";
         var mkdocs_page_input_path = "1 Physics/1 Mechanics/Problem_2.md";
         var mkdocs_page_url = null;
       </script>
@@ -48,7 +48,7 @@
 <ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Problem_1/">Problem 1</a>
 </li>
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 2</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Investigating the Dynamics of a Forced Damped Pendulum</a>
 <ul class="current">
 </ul>
 </li>
@@ -120,7 +120,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">1 Mechanics</li>
-<li class="breadcrumb-item active">Problem 2</li>
+<li class="breadcrumb-item active">Investigating the Dynamics of a Forced Damped Pendulum</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -128,61 +128,88 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-2">Problem 2</h1>
-<p>A four-bar linkage consists of four rigid links connected by four revolute joints, allowing motion transfer between input and output links.</p>
-<p>Types of Four-Bar Linkages:
-Crank-Rocker Mechanism – One link rotates fully, and another oscillates.
-Double Crank Mechanism – Both links rotate completely.
-Double Rocker Mechanism – Both links oscillate.
-Drag-Link Mechanism – The shortest link is the ground, and both moving links rotate fully.
-Key Equations in Four-Bar Linkage
-1. Grashof’s Criterion (Mobility Condition)
-To determine if at least one link can rotate completely, we use the following condition:</p>
-<p>S + L ≤ P + Q</p>
-<p>Where:
-S = Shortest link
-L = Longest link
-P, Q = The other two links
-If this condition is satisfied, the mechanism allows continuous motion.</p>
-<ol>
-<li>Velocity Analysis (Relative Velocity Equation)
-The velocity of a point on a link can be calculated using the Instantaneous Center Method:</li>
-</ol>
-<p>V = ω × r</p>
-<p>Where:</p>
-<p>V = Linear velocity
-ω = Angular velocity
-r = Distance from the pivot
-For two links in a four-bar mechanism, the ratio of angular velocities is:</p>
-<p>ω₂ / ω₁ = L₁ / L₂</p>
-<p>Where:</p>
-<p>ω₁, ω₂ = Angular velocities of two links
-L₁, L₂ = Lengths of the respective links
-3. Acceleration Analysis (Coriolis Acceleration)
-The total acceleration of a point in a four-bar linkage is the sum of two components:</p>
-<p>a = α × r + ω² × r</p>
-<p>Where:
-a = Acceleration
-α = Angular acceleration
-ω = Angular velocity
-r = Distance from the pivot
-For a slider-crank mechanism (a special case of a four-bar linkage), the Coriolis acceleration is:</p>
-<p>aᶜ = 2ωv</p>
-<p>Where:</p>
-<p>aᶜ = Coriolis acceleration
-v = Velocity of the slider
-4. Transmission Angle (μ)
-The transmission angle determines the efficiency of force transfer in the linkage mechanism:</p>
-<p>μ = cos⁻¹ [(L₂² + L₃² - L₄²) / (2 L₂ L₃)]</p>
-<p>Where:</p>
-<p>L₂, L₃, L₄ = Lengths of the links
-The best efficiency occurs when the transmission angle μ is close to 90°.</p>
-<p>Applications of Four-Bar Linkages
-Automobiles – Suspension systems, steering mechanisms
-Robotics – Robotic arms, gripper mechanisms
-Manufacturing Machines – Punching machines, presses
-Bicycles – Pedal mechanisms
-<img alt="alt text" src="../image.png"/></p>
+<h1 id="investigating-the-dynamics-of-a-forced-damped-pendulum">Investigating the Dynamics of a Forced Damped Pendulum</h1>
+<p>I'll break down the explanation step by step and include <strong>diagrams within each section</strong> for better clarity. Below is a <strong>detailed Markdown document with Python-generated figures</strong>, illustrating the behavior of a <strong>forced damped pendulum</strong>.  </p>
+<hr/>
+<h1 id="investigating-the-dynamics-of-a-forced-damped-pendulum_1"><strong>Investigating the Dynamics of a Forced Damped Pendulum</strong></h1>
+<h2 id="1-theoretical-foundation"><strong>1. Theoretical Foundation</strong></h2>
+<p>The equation governing the motion of a <strong>forced damped pendulum</strong> is:  </p>
+<div class="arithmatex">\[
+\frac{d^2\theta}{dt^2} + q \frac{d\theta}{dt} + \sin(\theta) = F \cos(\omega t)
+\]</div>
+<p>where:<br/>
+- <span class="arithmatex">\( \theta \)</span> is the <strong>angular displacement</strong><br/>
+- <span class="arithmatex">\( q \)</span> is the <strong>damping coefficient</strong><br/>
+- <span class="arithmatex">\( F \)</span> is the <strong>driving force amplitude</strong><br/>
+- <span class="arithmatex">\( \omega \)</span> is the <strong>driving frequency</strong> </p>
+<h3 id="a-small-angle-approximation"><strong>(a) Small Angle Approximation</strong></h3>
+<p>For <strong>small angles</strong> (<span class="arithmatex">\( \theta \ll 1 \)</span>), we approximate <span class="arithmatex">\( \sin(\theta) \approx \theta \)</span>, leading to:</p>
+<div class="arithmatex">\[
+\frac{d^2\theta}{dt^2} + q \frac{d\theta}{dt} + \theta = F \cos(\omega t)
+\]</div>
+<p>This is a <strong>driven damped harmonic oscillator</strong>, which exhibits resonance at a specific <strong>natural frequency</strong>. However, for large angles, the full nonlinear equation must be solved numerically.</p>
+<hr/>
+<h2 id="2-numerical-simulation"><strong>2. Numerical Simulation</strong></h2>
+<p>We solve the equations using <strong>Runge-Kutta integration</strong> (<code>solve_ivp</code>). The system is rewritten as two first-order differential equations:</p>
+<div class="arithmatex">\[
+\frac{d\theta}{dt} = \omega
+\]</div>
+<div class="arithmatex">\[
+\frac{d\omega}{dt} = -q \omega - \sin(\theta) + F \cos(\Omega t)
+\]</div>
+<p>Below is the <strong>Python code</strong> to integrate and analyze the pendulum's motion.</p>
+<hr/>
+<h3 id="a-time-evolution-of-the-angle"><strong>(a) Time Evolution of the Angle</strong></h3>
+<p>The first plot shows how the pendulum's <strong>angular displacement</strong> evolves over time.</p>
+<p><img alt="alt text" src="../image-1.png"/></p>
+<p>📌 <strong>Observation:</strong><br/>
+- The oscillations are <strong>not perfectly sinusoidal</strong>, indicating <strong>nonlinear effects</strong>.<br/>
+- The <strong>damping coefficient</strong> affects how quickly the motion settles.  </p>
+<hr/>
+<h3 id="b-phase-space-diagram"><strong>(b) Phase Space Diagram</strong></h3>
+<p>The <strong>phase space</strong> plot (angular velocity vs. angle) shows whether the motion is <strong>periodic or chaotic</strong>.</p>
+<p><img alt="alt text" src="../image-2.png"/></p>
+<p>📌 <strong>Interpretation:</strong><br/>
+- If the plot forms <strong>closed loops</strong>, the motion is <strong>regular and periodic</strong>.<br/>
+- If the motion is <strong>scattered</strong>, the system is exhibiting <strong>chaotic behavior</strong>.  </p>
+<hr/>
+<h3 id="c-poincare-section"><strong>(c) Poincaré Section</strong></h3>
+<p>A <strong>Poincaré section</strong> helps reveal chaotic motion. We sample points at <strong>regular time intervals</strong> matching the driving force period.</p>
+<p><img alt="alt text" src="../image-3.png"/></p>
+<p>📌 <strong>Interpretation:</strong><br/>
+- <strong>A single point or a few discrete points</strong> → <strong>Regular periodic motion</strong><br/>
+- <strong>Many scattered points</strong> → <strong>Chaotic motion</strong> </p>
+<hr/>
+<h3 id="d-bifurcation-diagram"><strong>(d) Bifurcation Diagram</strong></h3>
+<p>The <strong>bifurcation diagram</strong> shows how the system <strong>transitions from periodic to chaotic motion</strong> as the driving force <strong><span class="arithmatex">\( F \)</span></strong> is varied.</p>
+<p><img alt="alt text" src="../image-4.png"/></p>
+<p>📌 <strong>Interpretation:</strong><br/>
+- At <strong>low <span class="arithmatex">\( F \)</span></strong>, the motion is <strong>regular and periodic</strong>.<br/>
+- As <span class="arithmatex">\( F \)</span> increases, <strong>bifurcations</strong> occur, leading to <strong>chaotic motion</strong>.  </p>
+<hr/>
+<h2 id="3-real-world-applications"><strong>3. Real-World Applications</strong></h2>
+<p>The <strong>forced damped pendulum</strong> is a fundamental model in <strong>many fields</strong>:<br/>
+✅ <strong>Mechanical Systems:</strong> <strong>Energy harvesting</strong>, oscillation control<br/>
+✅ <strong>Electrical Circuits:</strong> Analogous to <strong>RLC circuits</strong> in electronics<br/>
+✅ <strong>Biomechanics:</strong> Modeling <strong>human gait and balance</strong><br/>
+✅ <strong>Climate Systems:</strong> Explains <strong>atmospheric oscillations</strong> </p>
+<hr/>
+<h2 id="4-discussion-and-future-extensions"><strong>4. Discussion and Future Extensions</strong></h2>
+<ul>
+<li><strong>Resonance</strong>: When the driving frequency matches the <strong>natural frequency</strong>, oscillations become <strong>amplified</strong>.  </li>
+<li><strong>Chaos</strong>: Large driving forces lead to <strong>irregular, unpredictable motion</strong>.  </li>
+<li><strong>Further Enhancements</strong>:<br/>
+  ✅ Nonlinear damping models<br/>
+  ✅ External <strong>random forcing</strong><br/>
+  ✅ <strong>3D visualizations</strong> of attractors  </li>
+</ul>
+<hr/>
+<h2 id="5-conclusion"><strong>5. Conclusion</strong></h2>
+<p>This project investigates the <strong>forced damped pendulum</strong>, showing how it transitions from <strong>regular oscillations to chaotic behavior</strong>. Key insights:<br/>
+1️⃣ <strong>Time series</strong> plots illustrate oscillatory motion.<br/>
+2️⃣ <strong>Phase portraits</strong> reveal <strong>chaotic attractors</strong>.<br/>
+3️⃣ <strong>Poincaré sections</strong> highlight periodic vs. chaotic motion.<br/>
+4️⃣ <strong>Bifurcation diagrams</strong> visualize <strong>chaotic transitions</strong>.  </p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
