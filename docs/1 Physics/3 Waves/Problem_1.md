@@ -82,28 +82,6 @@ This code generates the interference pattern for the pentagon configuration.
 
 ---
 
-### **4. Visual Comparison of Interference Patterns**
-
-#### **Square (N = 4)**
-
-Here is the interference pattern when the sources are arranged in a square (N = 4):
-
-![Square Interference](https://via.placeholder.com/500x400.png)
-
-#### **Equilateral Triangle (N = 3)**
-
-For the equilateral triangle arrangement (N = 3):
-
-![Triangle Interference](https://via.placeholder.com/500x400.png)
-
-#### **Regular Pentagon (N = 5)**
-
-For the regular pentagon arrangement (N = 5):
-
-![Pentagon Interference](https://via.placeholder.com/500x400.png)
-
----
-
 ### **5. Conclusion**
 
 #### **Summary:**
