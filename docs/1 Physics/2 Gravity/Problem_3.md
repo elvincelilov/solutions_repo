@@ -64,17 +64,13 @@ Here are the graphical outputs for the three different types of trajectories:
 #### **Elliptical Trajectory Example**
 The plot will show a **closed elliptical path**, representing a bound orbit. The payload stays in orbit around Earth.
 
-![Elliptical Trajectory](https://via.placeholder.com/600x400.png?text=Elliptical+Trajectory)
-
 #### **Parabolic Escape Example**
 This plot will show a **parabolic path**, where the object is at escape velocity and will move away from Earth along a parabolic curve.
 
-![Parabolic Trajectory](https://via.placeholder.com/600x400.png?text=Parabolic+Trajectory)
 
 #### **Hyperbolic Escape Example**
 This plot shows a **hyperbolic path**, indicating the payload exceeds the escape velocity and moves away from Earth in an open trajectory.
 
-![Hyperbolic Trajectory](https://via.placeholder.com/600x400.png?text=Hyperbolic+Trajectory)
 
 ---
 
