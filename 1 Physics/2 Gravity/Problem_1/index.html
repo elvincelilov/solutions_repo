@@ -129,6 +129,82 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="orbital-period-and-orbital-radius">Orbital Period and Orbital Radius</h1>
+<p>Got it! 🚀 This problem revolves around <strong>Kepler's Third Law</strong>, which describes the relationship between the <strong>orbital period</strong> and the <strong>orbital radius</strong>. Below is a <strong>detailed breakdown</strong> including theory, numerical simulations, and visualizations.</p>
+<hr/>
+<h1 id="orbital-period-and-orbital-radius_1"><strong>Orbital Period and Orbital Radius</strong></h1>
+<h2 id="1-theoretical-foundation"><strong>1. Theoretical Foundation</strong></h2>
+<p>Kepler's Third Law states that for a <strong>circular orbit</strong>, the square of the <strong>orbital period</strong> <span class="arithmatex">\( T \)</span> is proportional to the cube of the <strong>orbital radius</strong> <span class="arithmatex">\( r \)</span>:  </p>
+<div class="arithmatex">\[
+T^2 \propto r^3
+\]</div>
+<p>This law arises from <strong>Newton’s Law of Universal Gravitation</strong> and <strong>centripetal force</strong>.</p>
+<h3 id="a-derivation-from-newtons-laws"><strong>(a) Derivation from Newton's Laws</strong></h3>
+<p>For an object of mass <span class="arithmatex">\( m \)</span> orbiting a massive body of mass <span class="arithmatex">\( M \)</span>, the gravitational force provides the necessary <strong>centripetal force</strong>:</p>
+<div class="arithmatex">\[
+F_{\text{gravity}} = F_{\text{centripetal}}
+\]</div>
+<div class="arithmatex">\[
+\frac{G M m}{r^2} = \frac{m v^2}{r}
+\]</div>
+<p>Cancelling <span class="arithmatex">\( m \)</span> and solving for <strong>orbital velocity</strong> <span class="arithmatex">\( v \)</span>:</p>
+<div class="arithmatex">\[
+v^2 = \frac{G M}{r}
+\]</div>
+<p>Since the <strong>orbital period</strong> is the time taken to complete one full orbit:</p>
+<div class="arithmatex">\[
+T = \frac{\text{circumference}}{\text{velocity}} = \frac{2\pi r}{v}
+\]</div>
+<p>Substituting <span class="arithmatex">\( v = \sqrt{\frac{G M}{r}} \)</span>:</p>
+<div class="arithmatex">\[
+T = 2\pi \sqrt{\frac{r^3}{G M}}
+\]</div>
+<p>Squaring both sides:</p>
+<div class="arithmatex">\[
+T^2 = \frac{4\pi^2}{G M} r^3
+\]</div>
+<p>📌 <strong>Conclusion:</strong> <strong><span class="arithmatex">\( T^2 \propto r^3 \)</span></strong>, meaning that a planet’s orbital period increases as its orbital radius grows.</p>
+<hr/>
+<h2 id="2-real-world-applications-of-keplers-third-law"><strong>2. Real-World Applications of Kepler’s Third Law</strong></h2>
+<p>1️⃣ <strong>Determining Planetary Masses</strong><br/>
+   - Rearranging <span class="arithmatex">\( T^2 = \frac{4\pi^2}{G M} r^3 \)</span>, we can <strong>calculate the mass of a planet or star</strong> if we know the orbital radius and period of a satellite.  </p>
+<p>2️⃣ <strong>Satellite Orbits</strong><br/>
+   - Used to <strong>predict satellite lifetimes</strong> and <strong>design stable orbits</strong> for GPS, communication, and research satellites.  </p>
+<p>3️⃣ <strong>Exoplanet Discovery</strong><br/>
+   - Astronomers use Kepler’s Law to <strong>estimate the distance of exoplanets</strong> orbiting distant stars.  </p>
+<hr/>
+<h2 id="3-numerical-simulation-in-python"><strong>3. Numerical Simulation in Python</strong></h2>
+<h3 id="a-simulating-circular-orbits"><strong>(a) Simulating Circular Orbits</strong></h3>
+<p>We numerically integrate the equations of motion using <strong>Newton's second law</strong> and visualize the <strong>circular motion</strong>.</p>
+<p><img alt="alt text" src="../image.png"/></p>
+<p>📌 <strong>Observation:</strong><br/>
+- The <strong>orbit is nearly circular</strong>, confirming a <strong>stable gravitational system</strong>.<br/>
+- The velocity is precisely tuned to maintain a <strong>constant orbital radius</strong>.  </p>
+<hr/>
+<h3 id="b-verifying-keplers-third-law"><strong>(b) Verifying Kepler’s Third Law</strong></h3>
+<p>Now, we simulate <strong>multiple orbits</strong> at different radii and check whether <span class="arithmatex">\( T^2 \)</span> is proportional to <span class="arithmatex">\( r^3 \)</span>.</p>
+<p><img alt="alt text" src="../image-1.png"/></p>
+<p>📌 <strong>Observation:</strong><br/>
+- The relationship is <strong>linear</strong>, confirming <strong>Kepler’s Third Law</strong>.<br/>
+- The slope of the graph should be approximately <strong><span class="arithmatex">\( \frac{4\pi^2}{GM} \)</span></strong>.  </p>
+<hr/>
+<h2 id="4-extensions-to-elliptical-orbits"><strong>4. Extensions to Elliptical Orbits</strong></h2>
+<p>For <strong>elliptical orbits</strong>, the relationship still holds, but <span class="arithmatex">\( r \)</span> is replaced by the <strong>semi-major axis</strong> <span class="arithmatex">\( a \)</span>:</p>
+<div class="arithmatex">\[
+T^2 = \frac{4\pi^2}{G M} a^3
+\]</div>
+<p>📌 <strong>Key Differences:</strong><br/>
+✅ <strong>Elliptical orbits</strong> have <strong>varying speeds</strong> (fastest at perihelion, slowest at aphelion).<br/>
+✅ Kepler’s <strong>Second Law</strong> states planets sweep <strong>equal areas in equal time</strong>.  </p>
+<p>🔹 <strong>Further Enhancements:</strong><br/>
+🔹 <strong>Simulating elliptical orbits</strong> using a <strong>gravitational two-body simulation</strong>.<br/>
+🔹 <strong>Exploring exoplanet systems</strong> using the same method.  </p>
+<hr/>
+<h2 id="5-conclusion"><strong>5. Conclusion</strong></h2>
+<p>This study <strong>successfully verified Kepler's Third Law</strong> using both <strong>theoretical derivation and numerical simulation</strong>. Key takeaways:</p>
+<p>1️⃣ <strong>Kepler's Third Law</strong> states that <span class="arithmatex">\( T^2 \propto r^3 \)</span>, which we confirmed using <strong>simulated orbits</strong>.<br/>
+2️⃣ <strong>The Python simulation</strong> demonstrated stable <strong>circular motion</strong>, validating Newtonian physics.<br/>
+3️⃣ <strong>Real-world applications</strong> include predicting <strong>satellite orbits</strong>, <strong>planetary motion</strong>, and <strong>exoplanet discovery</strong>.  </p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
