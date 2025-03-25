@@ -72,6 +72,50 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#problem-1-simulating-the-effects-of-the-lorentz-force">Problem 1: Simulating the Effects of the Lorentz Force</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#1-exploration-of-applications">1. Exploration of Applications</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#role-of-electric-and-magnetic-fields">Role of Electric and Magnetic Fields:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-simulating-particle-motion">2. Simulating Particle Motion</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#a-uniform-magnetic-field">(a) Uniform Magnetic Field:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#b-combined-electric-and-magnetic-fields">(b) Combined Electric and Magnetic Fields:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#c-crossed-electric-and-magnetic-fields">(c) Crossed Electric and Magnetic Fields:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-parameter-exploration">3. Parameter Exploration</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-numerical-simulation-and-visualization">4. Numerical Simulation and Visualization</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#python-code-implementation">Python Code Implementation:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#python-code-for-circular-motion-in-a-uniform-magnetic-field">Python Code for Circular Motion in a Uniform Magnetic Field:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#python-code-for-helical-motion-in-combined-electric-and-magnetic-fields">Python Code for Helical Motion in Combined Electric and Magnetic Fields:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#python-code-for-drift-motion-in-crossed-electric-and-magnetic-fields">Python Code for Drift Motion in Crossed Electric and Magnetic Fields:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#5-visualization-of-results">5. Visualization of Results</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#circular-motion-in-a-magnetic-field">Circular Motion in a Magnetic Field:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#helical-motion-with-electric-and-magnetic-fields">Helical Motion with Electric and Magnetic Fields:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#drift-motion-in-crossed-fields">Drift Motion in Crossed Fields:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#6-conclusion">6. Conclusion</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -129,6 +173,89 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h3 id="problem-1-simulating-the-effects-of-the-lorentz-force"><strong>Problem 1: Simulating the Effects of the Lorentz Force</strong></h3>
+<h2 id="1-exploration-of-applications"><strong>1. Exploration of Applications</strong></h2>
+<p>The <strong>Lorentz force</strong> governs the motion of charged particles in the presence of electric and magnetic fields. The Lorentz force is expressed as:</p>
+<div class="arithmatex">\[
+\mathbf{F} = q (\mathbf{E} + \mathbf{v} \times \mathbf{B})
+\]</div>
+<p>Where:
+- <span class="arithmatex">\( \mathbf{F} \)</span> is the force on the particle,
+- <span class="arithmatex">\( q \)</span> is the charge of the particle,
+- <span class="arithmatex">\( \mathbf{E} \)</span> is the electric field,
+- <span class="arithmatex">\( \mathbf{B} \)</span> is the magnetic field,
+- <span class="arithmatex">\( \mathbf{v} \)</span> is the velocity of the particle.</p>
+<p>The Lorentz force is fundamental in several systems, including:
+- <strong>Particle Accelerators</strong>: In cyclotrons or synchrotrons, the Lorentz force is used to accelerate particles to high velocities by controlling their paths with electromagnetic fields.
+- <strong>Mass Spectrometers</strong>: Charged particles are manipulated using electric and magnetic fields to measure their mass-to-charge ratio.
+- <strong>Plasma Confinement</strong>: In devices like tokamaks, the Lorentz force helps confine plasma using magnetic fields to achieve controlled fusion reactions.</p>
+<h4 id="role-of-electric-and-magnetic-fields"><strong>Role of Electric and Magnetic Fields</strong>:</h4>
+<ul>
+<li><strong>Electric Field (<span class="arithmatex">\(\mathbf{E}\)</span>)</strong>: Accelerates charged particles along its direction.</li>
+<li><strong>Magnetic Field (<span class="arithmatex">\(\mathbf{B}\)</span>)</strong>: Causes charged particles to move in circular or helical paths, as it exerts a force perpendicular to the velocity of the particle.</li>
+</ul>
+<hr/>
+<h2 id="2-simulating-particle-motion"><strong>2. Simulating Particle Motion</strong></h2>
+<p>The Lorentz force affects the trajectory of a charged particle. Let's simulate this for different scenarios:</p>
+<h3 id="a-uniform-magnetic-field"><strong>(a) Uniform Magnetic Field</strong>:</h3>
+<p>When a charged particle moves through a uniform magnetic field, it experiences a force perpendicular to its velocity, causing it to follow a circular trajectory.</p>
+<h4 id="equations-of-motion"><strong>Equations of Motion</strong>:</h4>
+<p>In a uniform magnetic field <span class="arithmatex">\( \mathbf{B} \)</span>, the force is:</p>
+<div class="arithmatex">\[
+\mathbf{F} = q (\mathbf{v} \times \mathbf{B})
+\]</div>
+<p>This force causes circular motion, with the radius of the orbit known as the <strong>Larmor radius</strong>:</p>
+<div class="arithmatex">\[
+r = \frac{mv}{qB}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\( m \)</span> is the particle's mass,
+- <span class="arithmatex">\( v \)</span> is the velocity of the particle,
+- <span class="arithmatex">\( B \)</span> is the magnetic field strength.</p>
+<h3 id="b-combined-electric-and-magnetic-fields"><strong>(b) Combined Electric and Magnetic Fields</strong>:</h3>
+<p>When both electric and magnetic fields are present, the motion of the charged particle becomes more complex, resulting in <strong>helical motion</strong>. The electric force accelerates the particle, while the magnetic force causes the circular motion.</p>
+<h3 id="c-crossed-electric-and-magnetic-fields"><strong>(c) Crossed Electric and Magnetic Fields</strong>:</h3>
+<p>If the electric and magnetic fields are crossed (perpendicular to each other), the particle's motion is affected by both fields simultaneously, causing the particle to drift at a constant velocity (known as <strong>E × B drift</strong>).</p>
+<hr/>
+<h2 id="3-parameter-exploration"><strong>3. Parameter Exploration</strong></h2>
+<p>We will explore how variations in the following parameters affect the trajectory:
+- <strong>Field strengths</strong> <span class="arithmatex">\( E \)</span> and <span class="arithmatex">\( B \)</span>,
+- <strong>Initial velocity</strong> <span class="arithmatex">\( \mathbf{v_0} \)</span>,
+- <strong>Charge</strong> and <strong>mass</strong> of the particle <span class="arithmatex">\( q \)</span> and <span class="arithmatex">\( m \)</span>.</p>
+<p>The simulation will compute and visualize the trajectory of the particle in each scenario.</p>
+<hr/>
+<h2 id="4-numerical-simulation-and-visualization"><strong>4. Numerical Simulation and Visualization</strong></h2>
+<p>The Lorentz force equation is solved numerically using <strong>Euler's method</strong> or <strong>Runge-Kutta</strong> method to update the position and velocity of the particle at each time step.</p>
+<h3 id="python-code-implementation"><strong>Python Code Implementation</strong>:</h3>
+<p>We will implement the following scenarios:</p>
+<ol>
+<li><strong>Circular Motion in a Uniform Magnetic Field</strong></li>
+<li><strong>Helical Motion in Combined Electric and Magnetic Fields</strong></li>
+<li><strong>Drift Motion in Crossed Electric and Magnetic Fields</strong></li>
+</ol>
+<hr/>
+<h3 id="python-code-for-circular-motion-in-a-uniform-magnetic-field"><strong>Python Code for Circular Motion in a Uniform Magnetic Field</strong>:</h3>
+<p><img alt="alt text" src="../image.png"/></p>
+<p>This code simulates the motion of a charged particle in a <strong>uniform magnetic field</strong> and visualizes its circular trajectory.</p>
+<hr/>
+<h3 id="python-code-for-helical-motion-in-combined-electric-and-magnetic-fields"><strong>Python Code for Helical Motion in Combined Electric and Magnetic Fields</strong>:</h3>
+<p><img alt="alt text" src="../image-1.png"/></p>
+<p>This code simulates the motion of a charged particle in both electric and magnetic fields, resulting in <strong>helical motion</strong>.</p>
+<hr/>
+<h3 id="python-code-for-drift-motion-in-crossed-electric-and-magnetic-fields"><strong>Python Code for Drift Motion in Crossed Electric and Magnetic Fields</strong>:</h3>
+<p><img alt="alt text" src="../image-2.png"/></p>
+<p>This code simulates the <strong>drift motion</strong> in <strong>crossed electric and magnetic fields</strong>, resulting in a uniform drift of the particle.</p>
+<hr/>
+<h2 id="5-visualization-of-results"><strong>5. Visualization of Results</strong></h2>
+<h4 id="circular-motion-in-a-magnetic-field"><strong>Circular Motion in a Magnetic Field</strong>:</h4>
+<p>The particle undergoes circular motion with the Larmor radius. The trajectory will be a circle centered at the origin.</p>
+<h4 id="helical-motion-with-electric-and-magnetic-fields"><strong>Helical Motion with Electric and Magnetic Fields</strong>:</h4>
+<p>The particle undergoes a helical path due to the combined effects of both electric and magnetic fields.</p>
+<h4 id="drift-motion-in-crossed-fields"><strong>Drift Motion in Crossed Fields</strong>:</h4>
+<p>In the crossed-field scenario, the particle exhibits a uniform drift due to the interaction of the electric and magnetic fields.</p>
+<hr/>
+<h2 id="6-conclusion"><strong>6. Conclusion</strong></h2>
+<p>By simulating the effects of the <strong>Lorentz force</strong> in different configurations, we can visualize the trajectories of charged particles under the influence of electromagnetic fields. These simulations help us understand real-world applications such as <strong>particle accelerators</strong>, <strong>mass spectrometers</strong>, and <strong>plasma confinement devices</strong>.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
