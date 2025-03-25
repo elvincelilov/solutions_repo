@@ -129,85 +129,80 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
-<hr/>
 <h1 id="escape-velocities-and-cosmic-velocities"><strong>Escape Velocities and Cosmic Velocities</strong></h1>
-<h2 id="1-theoretical-foundation"><strong>1. Theoretical Foundation</strong></h2>
-<h3 id="a-definition-of-cosmic-velocities"><strong>(a) Definition of Cosmic Velocities</strong></h3>
-<p>1️⃣ <strong>First Cosmic Velocity (Orbital Velocity)</strong><br/>
-   - The minimum speed required for a satellite to maintain a <strong>circular orbit</strong> around a celestial body.
-   - Given by:<br/>
-     [
-     v_1 = \sqrt{\frac{G M}{r}}
-     ]
-   - <strong>Application:</strong> Used for placing satellites into stable orbits.</p>
-<p>2️⃣ <strong>Second Cosmic Velocity (Escape Velocity)</strong><br/>
-   - The minimum speed required to <strong>completely escape</strong> a planet’s gravitational pull.
-   - Given by:<br/>
-     [
-     v_2 = \sqrt{\frac{2 G M}{r}}
-     ]
-   - <strong>Application:</strong> Used for interplanetary missions (e.g., Moon landings, Mars missions).</p>
-<p>3️⃣ <strong>Third Cosmic Velocity (Solar System Escape Velocity)</strong><br/>
-   - The speed required to <strong>leave the entire solar system</strong> from Earth’s orbit.
-   - Given by:<br/>
-     [
-     v_3 = \sqrt{v_2^2 + v_{\text{orbital}}^2}
-     ]
-   - <strong>Application:</strong> Used for deep-space probes like <strong>Voyager 1 &amp; 2</strong>.</p>
+<h2 id="motivation"><strong>Motivation:</strong></h2>
+<p>The concept of <strong>escape velocity</strong> is crucial for understanding how an object can break free from a celestial body's gravitational influence. The first, second, and third cosmic velocities are essential concepts in orbital mechanics. These velocities define the thresholds for <strong>orbiting</strong>, <strong>escaping</strong>, and <strong>leaving a star system</strong>. These principles underpin modern space exploration, from <strong>launching satellites</strong> to <strong>interplanetary missions</strong> and even potential <strong>interstellar travel</strong></p>
+<h3 id="1-define-the-first-second-and-third-cosmic-velocities"><strong>1. Define the First, Second, and Third Cosmic Velocities:</strong></h3>
+<p><strong>First Cosmic Velocity (Orbital Velocity):</strong><br/>
+This is the minimum velocity an object must have in order to <strong>maintain a stable circular orbit</strong> around a planet or a celestial body. It is the velocity required to counterbalance the gravitational pull of the planet with the object's inertia (centripetal force).</p>
+<p><strong>Formula:</strong>
+[
+v_1 = \sqrt{\frac{GM}{R}}
+]
+Where:
+- <span class="arithmatex">\( G \)</span> = Gravitational constant (<span class="arithmatex">\( 6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2} \)</span>)
+- <span class="arithmatex">\( M \)</span> = Mass of the celestial body (e.g., Earth, Mars)
+- <span class="arithmatex">\( R \)</span> = Radius of the celestial body</p>
 <hr/>
-<h2 id="2-mathematical-derivation"><strong>2. Mathematical Derivation</strong></h2>
-<p>For a body of mass <span class="arithmatex">\( m \)</span> on the surface of a celestial body of mass <span class="arithmatex">\( M \)</span> and radius <span class="arithmatex">\( r \)</span>, the total energy (kinetic + gravitational potential) is:</p>
-<div class="arithmatex">\[
-E = \frac{1}{2} m v^2 - \frac{G M m}{r}
-\]</div>
+<p><strong>Second Cosmic Velocity (Escape Velocity):</strong><br/>
+This is the minimum velocity an object must have in order to <strong>escape</strong> the gravitational influence of the celestial body, without any further propulsion. It is derived from energy conservation, equating the object's kinetic energy to the gravitational potential energy.</p>
+<p><strong>Formula:</strong>
+[
+v_2 = \sqrt{\frac{2GM}{R}}
+]
+Where:
+- <span class="arithmatex">\( G \)</span> = Gravitational constant
+- <span class="arithmatex">\( M \)</span> = Mass of the celestial body
+- <span class="arithmatex">\( R \)</span> = Radius of the celestial body</p>
+<hr/>
+<p><strong>Third Cosmic Velocity (Solar Escape Velocity):</strong><br/>
+The third cosmic velocity is the speed required to escape not just the gravitational pull of a planet or star, but to also <strong>escape the gravitational influence of the Sun</strong> (or the gravitational pull of the primary star in a system). This is the velocity needed for <strong>interstellar travel</strong>, i.e., to leave the solar system.</p>
+<p><strong>Formula:</strong>
+[
+v_3 = \sqrt{v_2^2 + v_{\text{orbit}}^2}
+]
+Where:
+- <span class="arithmatex">\( v_2 \)</span> = Escape velocity from the planet
+- <span class="arithmatex">\( v_{\text{orbit}} \)</span> = Orbital velocity of the planet around the Sun</p>
+<hr/>
+<h3 id="2-mathematical-derivations-and-parameters-affecting-these-velocities"><strong>2. Mathematical Derivations and Parameters Affecting These Velocities:</strong></h3>
+<p>These velocities depend on the <strong>mass</strong> of the celestial body and the <strong>radius</strong> of its orbit. The first and second cosmic velocities only depend on the mass and radius of the celestial body, while the third cosmic velocity also takes into account the orbital velocity of the planet around its star (such as Earth orbiting the Sun).</p>
+<hr/>
+<h3 id="3-calculation-and-visualization-of-cosmic-velocities-for-different-celestial-bodies"><strong>3. Calculation and Visualization of Cosmic Velocities for Different Celestial Bodies:</strong></h3>
+<p>Let’s consider the following celestial bodies for our calculations:
+- <strong>Earth</strong>
+- <strong>Mars</strong>
+- <strong>Jupiter</strong></p>
+<p>Each of these celestial bodies will have different values for their escape velocities and orbital velocities, which we will calculate and visualize.
+<img alt="alt text" src="../image-3.png"/></p>
+<h3 id="5-graphical-representation-of-cosmic-velocities"><strong>5. Graphical Representation of Cosmic Velocities:</strong></h3>
+<p>In the above code, the following <strong>bar chart</strong> visually compares the <strong>first</strong>, <strong>second</strong>, and <strong>third cosmic velocities</strong> for Earth, Mars, and Jupiter.</p>
 <ul>
-<li>For <strong>circular orbit</strong>, kinetic energy equals gravitational potential energy:</li>
+<li><strong>First Cosmic Velocity</strong>: Represents the orbital velocity required to maintain a stable orbit around the celestial body.</li>
+<li><strong>Second Cosmic Velocity</strong>: The escape velocity, required to overcome the gravitational pull and escape the body’s influence.</li>
+<li><strong>Third Cosmic Velocity</strong>: The speed required to leave the solar system (escape the Sun’s gravitational influence).</li>
 </ul>
-<p>[
-  \frac{1}{2} m v_1^2 = \frac{G M m}{2 r}
-  ]</p>
-<p>[
-  v_1 = \sqrt{\frac{G M}{r}}
-  ]</p>
-<ul>
-<li>For <strong>escape velocity</strong>, total energy must be <strong>zero</strong> (object never returns):</li>
-</ul>
-<p>[
-  \frac{1}{2} m v_2^2 - \frac{G M m}{r} = 0
-  ]</p>
-<p>[
-  v_2 = \sqrt{\frac{2 G M}{r}}
-  ]</p>
-<ul>
-<li>For <strong>leaving the Solar System</strong>, an object must first escape Earth and then overcome the Sun’s pull:</li>
-</ul>
-<p>[
-  v_3 = \sqrt{v_2^2 + v_{\text{Earth orbit}}^2}
-  ]</p>
 <hr/>
-<h2 id="3-numerical-simulation-in-python"><strong>3. Numerical Simulation in Python</strong></h2>
-<h3 id="a-visualization-of-escape-velocities"><strong>(a) Visualization of Escape Velocities</strong></h3>
-<p><img alt="alt text" src="../image-2.png"/></p>
-<p>📌 <strong>Graph Interpretation:</strong><br/>
-- <strong>Mars has the lowest escape velocity</strong> (~5 km/s), making it an easier target for future colonization.<br/>
-- <strong>Jupiter's escape velocity is ~60 km/s</strong>, meaning a spacecraft would need enormous energy to leave.  </p>
+<h3 id="6-importance-in-space-exploration"><strong>6. Importance in Space Exploration:</strong></h3>
+<ol>
+<li><strong>Satellite Launches:</strong></li>
+<li>
+<p>The <strong>first cosmic velocity</strong> is crucial for <strong>satellite launches</strong>. The spacecraft must achieve this velocity to remain in orbit without further propulsion.</p>
+</li>
+<li>
+<p><strong>Interplanetary Missions:</strong></p>
+</li>
+<li>
+<p>To send probes to other planets, spacecraft must reach or exceed the <strong>escape velocity</strong> of Earth (second cosmic velocity).</p>
+</li>
+<li>
+<p><strong>Interstellar Travel:</strong></p>
+</li>
+<li>For potential missions to other star systems, we would need to achieve the <strong>third cosmic velocity</strong> to escape the solar system and travel between stars.</li>
+</ol>
 <hr/>
-<h2 id="4-applications-in-space-exploration"><strong>4. Applications in Space Exploration</strong></h2>
-<p>🚀 <strong>Satellite Deployment</strong><br/>
-   - Understanding <strong>first cosmic velocity</strong> is essential for <strong>placing satellites</strong> in stable orbits.<br/>
-   - Example: The <strong>ISS orbits Earth at ~7.66 km/s</strong>.  </p>
-<p>🚀 <strong>Interplanetary Missions</strong><br/>
-   - <strong>Escape velocity</strong> determines <strong>how much energy a spacecraft needs</strong> to reach the Moon, Mars, or beyond.<br/>
-   - Example: Apollo missions required <strong>11.2 km/s</strong> to leave Earth.</p>
-<p>🚀 <strong>Deep Space Exploration</strong><br/>
-   - <strong>Third cosmic velocity</strong> is used for sending probes <strong>out of the Solar System</strong>.<br/>
-   - Example: <strong>Voyager 1</strong> reached <strong>17 km/s</strong> and left the Solar System.  </p>
-<hr/>
-<h2 id="5-conclusion"><strong>5. Conclusion</strong></h2>
-<p>✅ <strong>Kepler’s Laws and Newton’s Equations</strong> help determine velocities needed for <strong>orbiting, escaping planets, and leaving the Solar System</strong>.<br/>
-✅ <strong>Python simulations</strong> confirm theoretical values for <strong>Earth, Mars, and Jupiter</strong>.<br/>
-✅ <strong>Escape velocity is crucial for satellite launches, planetary missions, and deep-space exploration.</strong><br/>
-✅ <strong>Future missions</strong> will require innovative propulsion systems to achieve <strong>interstellar travel</strong>.  </p>
+<h3 id="7-conclusion"><strong>7. Conclusion:</strong></h3>
+<p>The study of <strong>escape velocities</strong> and <strong>cosmic velocities</strong> is fundamental for <strong>space exploration</strong>. These velocities define the minimum speeds needed to achieve various space missions, including satellite launches, interplanetary exploration, and even potential interstellar travel.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
