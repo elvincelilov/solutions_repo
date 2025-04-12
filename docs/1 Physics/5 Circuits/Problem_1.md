@@ -53,6 +53,8 @@ Reduce the circuit to a single resistor between the start and end nodes.
 
 ![alt text](image.png)
 
+![alt text](image-1.png)
+
 ## 🧪 **5. Test Examples**
 
 ### ⚡ Example 1: Series Circuit
