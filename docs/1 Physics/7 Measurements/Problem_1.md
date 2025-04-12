@@ -1,5 +1,6 @@
 # Problem 1
 
+
 ### **Problem 1: Measuring Earth's Gravitational Acceleration with a Pendulum**
 
 This task focuses on determining the acceleration due to gravity (denoted as \( g \)) using a simple pendulum and analyzing the uncertainties in the measurements. We'll break this down step-by-step to ensure clear understanding and practical implementation.
@@ -149,4 +150,3 @@ Here’s an example of how you might structure your tabulated data and analysis 
 ### **Conclusion**
 By performing this experiment, we can measure Earth's gravitational acceleration \( g \) using a simple pendulum and analyze the uncertainties in the measurement. This approach is a great introduction to experimental physics, uncertainty analysis, and error propagation.
 
-Let me know if you need help with any specific part or further explanation! 😊
