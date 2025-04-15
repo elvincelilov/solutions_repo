@@ -86,6 +86,40 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 2</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#part-1-estimating-pi-using-a-circle-based-monte-carlo-method">Part 1: Estimating Pi Using a Circle-based Monte Carlo Method</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#1-theoretical-foundation">1. Theoretical Foundation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#2-simulation">2. Simulation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#3-visualization">3. Visualization</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#python-code-for-circle-based-monte-carlo-method">Python Code for Circle-based Monte Carlo Method</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#explanation-of-the-code">Explanation of the Code:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#part-2-estimating-pi-using-buffons-needle">Part 2: Estimating Pi Using Buffon’s Needle</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#1-theoretical-foundation_1">1. Theoretical Foundation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#2-simulation_1">2. Simulation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#3-visualization_1">3. Visualization</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#python-code-for-buffons-needle-simulation">Python Code for Buffon’s Needle Simulation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#explanation-of-the-code_1">Explanation of the Code:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#analysis-and-convergence">Analysis and Convergence</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#conclusion">Conclusion</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -129,6 +163,77 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<h2 id="part-1-estimating-pi-using-a-circle-based-monte-carlo-method"><strong>Part 1: Estimating Pi Using a Circle-based Monte Carlo Method</strong></h2>
+<h3 id="1-theoretical-foundation"><strong>1. Theoretical Foundation</strong></h3>
+<p>The basic idea behind using the Monte Carlo method to estimate Pi involves generating random points within a square that bounds a unit circle and calculating the ratio of points inside the circle to the total number of points.</p>
+<ul>
+<li><strong>Unit Circle</strong>: A circle with a radius of 1, centered at the origin (0,0), where the equation of the circle is <span class="arithmatex">\(x^2 + y^2 \leq 1\)</span>.</li>
+<li><strong>Square</strong>: The square bounds the unit circle. For simplicity, we assume the square has side length 2, so it spans from <span class="arithmatex">\((-1, -1)\)</span> to <span class="arithmatex">\((1, 1)\)</span>.</li>
+</ul>
+<p>The idea is:
+- The area of the square is <span class="arithmatex">\( 2 \times 2 = 4 \)</span>.
+- The area of the circle is <span class="arithmatex">\( \pi \times r^2 = \pi \)</span> (since the radius <span class="arithmatex">\( r = 1 \)</span>).</p>
+<p>The ratio of the points that fall inside the circle to the total points is approximately the ratio of the areas of the circle to the square, which is:</p>
+<div class="arithmatex">\[
+\frac{\text{points inside the circle}}{\text{total points}} \approx \frac{\pi}{4}
+\]</div>
+<p>From this, we can estimate Pi as:</p>
+<div class="arithmatex">\[
+\pi \approx 4 \times \frac{\text{points inside the circle}}{\text{total points}}
+\]</div>
+<h3 id="2-simulation"><strong>2. Simulation</strong></h3>
+<p>To simulate this, we will:
+1. Generate random points in the 2D square.
+2. Count how many points fall inside the unit circle.
+3. Estimate Pi based on the ratio of points inside the circle to total points.</p>
+<h3 id="3-visualization"><strong>3. Visualization</strong></h3>
+<p>We will create a plot showing the random points inside and outside the circle, with points inside the circle shown in one color and those outside in another.</p>
+<h3 id="python-code-for-circle-based-monte-carlo-method"><strong>Python Code for Circle-based Monte Carlo Method</strong></h3>
+<p><img alt="alt text" src="../image.png"/></p>
+<h3 id="explanation-of-the-code"><strong>Explanation of the Code:</strong></h3>
+<ul>
+<li>We generate random points using <code>np.random.uniform(-1, 1, num_points)</code>, which gives us random <code>x</code> and <code>y</code> values between -1 and 1.</li>
+<li>The condition <code>x**2 + y**2 &lt;= 1</code> checks if the point lies inside the unit circle.</li>
+<li>The estimate of Pi is calculated by the formula <span class="arithmatex">\( \pi \approx 4 \times \frac{\text{points inside the circle}}{\text{total points}} \)</span>.</li>
+<li>Finally, we plot the points, color-coding the points inside and outside the circle.</li>
+</ul>
+<hr/>
+<h2 id="part-2-estimating-pi-using-buffons-needle"><strong>Part 2: Estimating Pi Using Buffon’s Needle</strong></h2>
+<h3 id="1-theoretical-foundation_1"><strong>1. Theoretical Foundation</strong></h3>
+<p>Buffon's Needle is a probability problem that involves dropping a needle of length <span class="arithmatex">\( L \)</span> onto a floor with parallel lines spaced a distance <span class="arithmatex">\( D \)</span> apart. The problem estimates Pi by calculating the probability that the needle will cross one of the lines. The formula for the probability <span class="arithmatex">\( P \)</span> that the needle crosses a line is:</p>
+<div class="arithmatex">\[
+P = \frac{2L}{\pi D}
+\]</div>
+<p>From this, we can solve for Pi:</p>
+<div class="arithmatex">\[
+\pi \approx \frac{2L}{P D}
+\]</div>
+<p>In this problem:
+- <span class="arithmatex">\( L \)</span> is the length of the needle.
+- <span class="arithmatex">\( D \)</span> is the distance between parallel lines.
+- <span class="arithmatex">\( P \)</span> is the probability of the needle crossing a line, which can be estimated by simulating needle drops and counting how many times the needle crosses a line.</p>
+<h3 id="2-simulation_1"><strong>2. Simulation</strong></h3>
+<p>To simulate Buffon’s Needle:
+1. Randomly drop a needle of length <span class="arithmatex">\( L \)</span> onto the floor.
+2. Count how many times the needle crosses a line.
+3. Estimate Pi based on the derived formula.</p>
+<h3 id="3-visualization_1"><strong>3. Visualization</strong></h3>
+<p>We will create a plot showing the needle drops and whether the needle crosses a line or not.</p>
+<h3 id="python-code-for-buffons-needle-simulation"><strong>Python Code for Buffon’s Needle Simulation</strong></h3>
+<p><img alt="alt text" src="../image-1.png"/></p>
+<h3 id="explanation-of-the-code_1"><strong>Explanation of the Code:</strong></h3>
+<ul>
+<li>We simulate the random drop of a needle by choosing a random position for the needle relative to the lines and a random angle.</li>
+<li>If the needle crosses a line (i.e., if the distance from the center of the needle to the line is smaller than the length of the needle at that angle), it’s counted as a crossing.</li>
+<li>The estimate of Pi is then computed using the formula based on the number of crossings and the number of drops.</li>
+</ul>
+<hr/>
+<h2 id="analysis-and-convergence"><strong>Analysis and Convergence</strong></h2>
+<p>To analyze how the accuracy improves with more simulations, you can plot the estimated Pi values after each iteration. This allows you to see the convergence rate for both methods. In general, the more points or needle drops you use, the closer the estimate of Pi will get to the true value.</p>
+<p>You can also compare the two methods in terms of accuracy and computational efficiency. The Monte Carlo method using the circle is generally faster for large numbers of iterations, while Buffon’s Needle requires more complex geometric calculations.</p>
+<hr/>
+<h3 id="conclusion"><strong>Conclusion</strong></h3>
+<p>This task demonstrates two different Monte Carlo methods to estimate Pi, one using a circle-based approach and the other based on Buffon’s Needle. Both methods illustrate the power of random sampling in numerical simulations, and they converge towards the true value of Pi as the number of iterations increases.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
