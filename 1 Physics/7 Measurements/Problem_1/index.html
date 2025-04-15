@@ -92,6 +92,20 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#problem-1-measuring-earths-gravitational-acceleration-with-a-pendulum">Problem 1: Measuring Earth's Gravitational Acceleration with a Pendulum</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#procedure">Procedure</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#calculations">Calculations</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#analysis">Analysis</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#tabulated-data-format-markdown-example">Tabulated Data Format (Markdown Example)</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -129,6 +143,150 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h3 id="problem-1-measuring-earths-gravitational-acceleration-with-a-pendulum"><strong>Problem 1: Measuring Earth's Gravitational Acceleration with a Pendulum</strong></h3>
+<p>This task focuses on determining the acceleration due to gravity (denoted as <span class="arithmatex">\( g \)</span>) using a simple pendulum and analyzing the uncertainties in the measurements. We'll break this down step-by-step to ensure clear understanding and practical implementation.</p>
+<hr/>
+<h3 id="motivation"><strong>Motivation</strong></h3>
+<p>The acceleration due to gravity <span class="arithmatex">\( g \)</span> is a fundamental physical constant. Accurate measurements of <span class="arithmatex">\( g \)</span> are essential in many scientific fields. One of the most common ways to determine <span class="arithmatex">\( g \)</span> experimentally is using a pendulum, where the period of oscillation is dependent on <span class="arithmatex">\( g \)</span>.</p>
+<h3 id="procedure"><strong>Procedure</strong></h3>
+<ol>
+<li><strong>Materials Needed:</strong></li>
+<li>String (1 or 1.5 meters long)</li>
+<li>A small weight (e.g., bag of coins, bag of sugar, key chain)</li>
+<li>Stopwatch (or smartphone timer)</li>
+<li>
+<p>Ruler or measuring tape</p>
+</li>
+<li>
+<p><strong>Setup:</strong></p>
+</li>
+<li>Attach the weight to one end of the string and fix the other end to a sturdy support.</li>
+<li>
+<p>Measure the length of the pendulum <span class="arithmatex">\( L \)</span> from the suspension point to the center of the weight. Use a ruler or measuring tape. Record the resolution of the measuring tool and calculate the uncertainty in the length <span class="arithmatex">\( \Delta L \)</span> (which is half of the resolution of the ruler).</p>
+</li>
+<li>
+<p><strong>Data Collection:</strong></p>
+</li>
+<li>Displace the pendulum slightly (less than 15°) and release it.</li>
+<li>Measure the time for 10 full oscillations (<span class="arithmatex">\( T_{10} \)</span>).</li>
+<li>Repeat the process 10 times to obtain 10 measurements.</li>
+<li>Calculate the <strong>mean time for 10 oscillations</strong> <span class="arithmatex">\( \langle T_{10} \rangle \)</span> and the <strong>standard deviation</strong> <span class="arithmatex">\( \sigma_{T_{10}} \)</span>.</li>
+<li>
+<p>Determine the <strong>uncertainty in the mean time</strong> using the formula:</p>
+<p>[
+ \Delta T = \frac{\sigma_{T_{10}}}{\sqrt{n}}
+ ]</p>
+<p>where <span class="arithmatex">\( n \)</span> is the number of measurements.</p>
+</li>
+</ol>
+<hr/>
+<h3 id="calculations"><strong>Calculations</strong></h3>
+<ol>
+<li><strong>Calculate the Period <span class="arithmatex">\( T \)</span>:</strong></li>
+<li>
+<p>The period <span class="arithmatex">\( T \)</span> is the time for a single oscillation. We can find the period from the mean time for 10 oscillations:</p>
+<p>[
+ T = \frac{\langle T_{10} \rangle}{10}
+ ]</p>
+</li>
+<li>
+<p><strong>Determine <span class="arithmatex">\( g \)</span>:</strong>
+   The formula for the period <span class="arithmatex">\( T \)</span> of a simple pendulum is:</p>
+</li>
+</ol>
+<p>[
+   T = 2\pi \sqrt{\frac{L}{g}}
+   ]</p>
+<p>Rearranging this formula to solve for <span class="arithmatex">\( g \)</span>:</p>
+<p>[
+   g = \frac{4\pi^2 L}{T^2}
+   ]</p>
+<ol>
+<li><strong>Propagate Uncertainties:</strong>
+   The uncertainty in <span class="arithmatex">\( g \)</span> can be determined using error propagation. The general formula for uncertainty propagation when <span class="arithmatex">\( g \)</span> depends on <span class="arithmatex">\( L \)</span> and <span class="arithmatex">\( T \)</span> is:</li>
+</ol>
+<p>[
+   \Delta g = \sqrt{\left( \frac{\partial g}{\partial L} \Delta L \right)^2 + \left( \frac{\partial g}{\partial T} \Delta T \right)^2}
+   ]</p>
+<p>The partial derivatives are:
+   - <span class="arithmatex">\( \frac{\partial g}{\partial L} = \frac{4\pi^2}{T^2} \)</span>
+   - <span class="arithmatex">\( \frac{\partial g}{\partial T} = -\frac{8\pi^2 L}{T^3} \)</span></p>
+<p>Therefore, the uncertainty in <span class="arithmatex">\( g \)</span> is:</p>
+<p>[
+   \Delta g = \sqrt{\left( \frac{4\pi^2}{T^2} \Delta L \right)^2 + \left( -\frac{8\pi^2 L}{T^3} \Delta T \right)^2}
+   ]</p>
+<hr/>
+<h3 id="analysis"><strong>Analysis</strong></h3>
+<ol>
+<li>
+<p><strong>Compare your measured <span class="arithmatex">\( g \)</span> with the standard value</strong>:<br/>
+   The standard value of <span class="arithmatex">\( g \)</span> at the Earth's surface is approximately <strong>9.81 m/s²</strong>. Compare your calculated value of <span class="arithmatex">\( g \)</span> to this standard value and discuss any differences.</p>
+</li>
+<li>
+<p><strong>Discuss the following aspects:</strong></p>
+</li>
+<li><strong>Effect of measurement resolution on <span class="arithmatex">\( g \)</span></strong>: Discuss how uncertainties in the measurement of length (e.g., resolution of the ruler) influence the final result.</li>
+<li><strong>Variability in timing</strong>: Discuss how timing errors (e.g., human reaction time when using a stopwatch) might affect the precision of the period measurement.</li>
+<li><strong>Assumptions and experimental limitations</strong>: For example, we assume the pendulum's oscillations are small enough to approximate the period with the simple formula for a small-angle pendulum. Discuss potential sources of error, such as friction at the pivot point or air resistance.</li>
+</ol>
+<hr/>
+<h3 id="tabulated-data-format-markdown-example"><strong>Tabulated Data Format (Markdown Example)</strong></h3>
+<p>Here’s an example of how you might structure your tabulated data and analysis in a Markdown document:</p>
+<pre><code class="language-markdown">## Pendulum Experiment to Measure Earth's Gravitational Acceleration
+
+### Measured Data
+
+| Trial # | Time for 10 Oscillations (s) | Period for 1 Oscillation (T) (s) | Uncertainty in Time (s) |
+|---------|-----------------------------|----------------------------------|-------------------------|
+| 1       | 20.3                        | 2.03                             | 0.02                    |
+| 2       | 20.1                        | 2.01                             | 0.02                    |
+| 3       | 20.5                        | 2.05                             | 0.02                    |
+| ...     | ...                         | ...                              | ...                     |
+
+### Calculations
+
+- **Mean Time for 10 Oscillations**:  
+  \( \langle T_{10} \rangle = 20.2 \, \text{s} \)
+
+- **Period for 1 Oscillation**:  
+  \( T = \frac{\langle T_{10} \rangle}{10} = 2.02 \, \text{s} \)
+
+- **Length of Pendulum**:  
+  \( L = 1.0 \, \text{m} \)
+
+- **Calculated Gravitational Acceleration \( g \)**:  
+  \[
+  g = \frac{4\pi^2 L}{T^2} = 9.81 \, \text{m/s}^2
+  \]
+
+### Uncertainty Propagation
+
+- **Uncertainty in Gravitational Acceleration**:  
+  \[
+  \Delta g = \sqrt{\left( \frac{4\pi^2}{T^2} \Delta L \right)^2 + \left( -\frac{8\pi^2 L}{T^3} \Delta T \right)^2}
+  \]
+
+  \( \Delta L = 0.01 \, \text{m}, \Delta T = 0.02 \, \text{s} \)
+
+- **Final Value of \( g \) with Uncertainty**:  
+  \( g = 9.81 \pm 0.05 \, \text{m/s}^2 \)
+
+### Discussion
+
+- **Effect of Measurement Resolution**:  
+  The uncertainty in the measurement of length affects \( g \) by introducing a small uncertainty in the final result.
+
+- **Timing Variability**:  
+  Small human reaction times (if using a manual stopwatch) contribute to timing variability, which impacts the uncertainty in the period \( T \).
+
+- **Experimental Limitations**:  
+  Assumptions like the small angle approximation for the pendulum and ideal conditions (no air resistance or friction) affect the accuracy of the measured \( g \).
+
+</code></pre>
+<hr/>
+<h3 id="conclusion"><strong>Conclusion</strong></h3>
+<p>By performing this experiment, we can measure Earth's gravitational acceleration <span class="arithmatex">\( g \)</span> using a simple pendulum and analyze the uncertainties in the measurement. This approach is a great introduction to experimental physics, uncertainty analysis, and error propagation.</p>
+<p>Let me know if you need help with any specific part or further explanation! 😊</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
