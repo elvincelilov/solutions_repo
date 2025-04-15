@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 1 - Physics and Mathematics</title>
+<title>🧮 Problem 1: Equivalent Resistance Using Graph Theory - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 1";
+        var mkdocs_page_name = "\ud83e\uddee Problem 1: Equivalent Resistance Using Graph Theory";
         var mkdocs_page_input_path = "1 Physics/5 Circuits/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -76,31 +76,51 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">5 Circuits</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">🧮 Problem 1: Equivalent Resistance Using Graph Theory</a>
 <ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="#problem-1-equivalent-resistance-using-graph-theory">Problem 1: Equivalent Resistance Using Graph Theory</a>
+<li class="toctree-l3"><a class="reference internal" href="#1-motivation">🔍 1. Motivation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-theory-and-concept">🧠 2. Theory and Concept</a>
 <ul>
-<li class="toctree-l4"><a class="reference internal" href="#motivation">Motivation</a>
+<li class="toctree-l4"><a class="reference internal" href="#key-idea">🧷 Key Idea:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#series-combination">📐 Series Combination:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#parallel-combination">🔀 Parallel Combination:</a>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#option-1-simplified-task-algorithm-description">Option 1: Simplified Task – Algorithm Description</a>
+<li class="toctree-l3"><a class="reference internal" href="#3-algorithm-overview">🧩 3. Algorithm Overview</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#goal">📌 Goal:</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#steps-of-the-algorithm">Steps of the Algorithm:</a>
+<li class="toctree-l4"><a class="reference internal" href="#steps">🔁 Steps:</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#explanation-of-handling-nested-combinations">Explanation of Handling Nested Combinations</a>
+</ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#option-2-advanced-task-full-implementation">Option 2: Advanced Task – Full Implementation</a>
+<li class="toctree-l3"><a class="reference internal" href="#5-test-examples">🧪 5. Test Examples</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-1-series-circuit">⚡ Example 1: Series Circuit</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#python-code-implementation-using-networkx">Python Code Implementation using NetworkX</a>
+<li class="toctree-l4"><a class="reference internal" href="#example-2-parallel-circuit">🔁 Example 2: Parallel Circuit</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#explanation-of-code">Explanation of Code:</a>
+<li class="toctree-l4"><a class="reference internal" href="#example-3-nested-configuration">🧠 Example 3: Nested Configuration</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#test-cases-and-example-outputs">Test Cases and Example Outputs:</a>
+</ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#efficiency-analysis">Efficiency Analysis</a>
+<li class="toctree-l3"><a class="reference internal" href="#6-visualization">📈 6. Visualization</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a>
+<li class="toctree-l3"><a class="reference internal" href="#7-efficiency-and-improvements">🧩 7. Efficiency and Improvements</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#complexity">💡 Complexity:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#improvements">🚀 Improvements:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#8-real-world-applications">🧲 8. Real-World Applications</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#9-conclusion">✅ 9. Conclusion</a>
 </li>
 </ul>
 </li>
@@ -144,7 +164,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">5 Circuits</li>
-<li class="breadcrumb-item active">Problem 1</li>
+<li class="breadcrumb-item active">🧮 Problem 1: Equivalent Resistance Using Graph Theory</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -152,158 +172,97 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
-<h3 id="problem-1-equivalent-resistance-using-graph-theory"><strong>Problem 1: Equivalent Resistance Using Graph Theory</strong></h3>
+<h1 id="problem-1-equivalent-resistance-using-graph-theory">🧮 <strong>Problem 1: Equivalent Resistance Using Graph Theory</strong></h1>
 <hr/>
-<h4 id="motivation"><strong>Motivation</strong></h4>
-<p>Calculating the equivalent resistance of a circuit is crucial for designing efficient systems. Traditional methods can become cumbersome for complex circuits. Graph theory provides a more efficient approach by modeling circuits as graphs, where nodes represent junctions and edges represent resistors. This approach simplifies even complex circuits and opens the door for automated analysis and optimization in modern applications like circuit simulation and network design.</p>
-<p>In this task, we'll explore how to calculate the equivalent resistance of a circuit using graph theory, considering different configurations of resistors (series, parallel, and nested combinations).</p>
+<h2 id="1-motivation">🔍 <strong>1. Motivation</strong></h2>
+<p>Determining equivalent resistance in a circuit with multiple resistors is a classic challenge in physics and engineering. While simple circuits can be solved with series and parallel rules, <strong>complex circuits with many junctions, loops, and nested resistors require more powerful methods</strong>.</p>
+<p><strong>Graph theory</strong> provides a modern and efficient approach:
+- <strong>Nodes</strong> represent junctions,
+- <strong>Edges</strong> represent resistors, weighted by their resistance values.</p>
+<p>This structure allows us to apply algorithms from computer science to <strong>automate the simplification</strong> process, which is especially useful in simulation software, electrical optimization, and network design.</p>
 <hr/>
-<h3 id="option-1-simplified-task-algorithm-description"><strong>Option 1: Simplified Task – Algorithm Description</strong></h3>
-<p>To calculate the equivalent resistance using graph theory, we can break down the task into several key steps. The circuit can be represented as a <strong>graph</strong> where:
-- Each <strong>node</strong> represents a junction in the circuit.
-- Each <strong>edge</strong> between nodes represents a resistor with its resistance value as the edge's weight.</p>
-<h3 id="steps-of-the-algorithm"><strong>Steps of the Algorithm</strong>:</h3>
+<h2 id="2-theory-and-concept">🧠 <strong>2. Theory and Concept</strong></h2>
+<h3 id="key-idea">🧷 Key Idea:</h3>
+<p>Model the circuit as an <strong>undirected weighted graph</strong>, then simplify it by reducing series and parallel edges iteratively until the graph consists of a single edge between the input and output nodes.</p>
+<h3 id="series-combination">📐 Series Combination:</h3>
+<p>If two resistors <span class="arithmatex">\( R_1 \)</span> and <span class="arithmatex">\( R_2 \)</span> are in <strong>series</strong>, their equivalent resistance is:</p>
+<div class="arithmatex">\[
+R_{\text{eq}} = R_1 + R_2
+\]</div>
+<h3 id="parallel-combination">🔀 Parallel Combination:</h3>
+<p>If <span class="arithmatex">\( R_1 \)</span> and <span class="arithmatex">\( R_2 \)</span> are in <strong>parallel</strong>, the equivalent resistance is:</p>
+<div class="arithmatex">\[
+\frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2}
+\]</div>
+<hr/>
+<h2 id="3-algorithm-overview">🧩 <strong>3. Algorithm Overview</strong></h2>
+<h3 id="goal">📌 Goal:</h3>
+<p>Reduce the circuit to a single resistor between the start and end nodes.</p>
+<h3 id="steps">🔁 Steps:</h3>
 <ol>
-<li><strong>Model the Circuit as a Graph</strong>:</li>
-<li>Each resistor is represented as an edge with a weight equal to the resistance.</li>
-<li>
-<p>Each junction is a node where resistors meet.</p>
-</li>
-<li>
-<p><strong>Identify Series and Parallel Connections</strong>:</p>
-</li>
-<li><strong>Series Connection</strong>: Resistors are in series if they are directly connected in sequence. The total resistance for two resistors <span class="arithmatex">\( R_1 \)</span> and <span class="arithmatex">\( R_2 \)</span> in series is:
-     [
-     R_{\text{total}} = R_1 + R_2
-     ]</li>
-<li><strong>Parallel Connection</strong>: Resistors are in parallel if they are connected between the same two nodes. The total resistance for two resistors <span class="arithmatex">\( R_1 \)</span> and <span class="arithmatex">\( R_2 \)</span> in parallel is:
-     [
-     R_{\text{total}} = \frac{R_1 R_2}{R_1 + R_2}
-     ]</li>
-<li>
-<p>A more general case involves identifying clusters of resistors that are in series or parallel and reducing them step by step.</p>
-</li>
-<li>
-<p><strong>Iteratively Reduce the Graph</strong>:</p>
-</li>
-<li>Use a depth-first search (DFS) or breadth-first search (BFS) to explore the graph.</li>
-<li>For each pair of resistors connected in series or parallel, calculate the equivalent resistance and replace them with a single edge that represents the new resistance.</li>
-<li>
-<p>Update the graph and repeat the process until only one node remains, representing the equivalent resistance of the entire circuit.</p>
-</li>
-<li>
-<p><strong>Handle Nested Combinations</strong>:</p>
-</li>
-<li>In circuits with more complex configurations, you will need to identify subgraphs that represent series and parallel connections, reduce them, and then apply the same logic to the remaining circuit.</li>
+<li><strong>Build a graph</strong>: Use <code>networkx</code> to represent the circuit.</li>
+<li><strong>Detect series and parallel connections</strong>:</li>
+<li>Series: Node with degree 2 (not start/end) → collapse into one resistor.</li>
+<li>Parallel: Multiple edges between the same pair of nodes → merge.</li>
+<li><strong>Iteratively reduce</strong> the graph.</li>
+<li><strong>Return the resistance</strong> between start and end nodes.</li>
 </ol>
 <hr/>
-<hr/>
-<h3 id="explanation-of-handling-nested-combinations"><strong>Explanation of Handling Nested Combinations</strong></h3>
-<p>When encountering nested combinations (i.e., series and parallel connections within each other), the algorithm works as follows:
-- <strong>Identify Small Subgraphs</strong>: Use a search method (like DFS) to explore the graph and identify smaller subgraphs that represent series or parallel connections.
-- <strong>Simplify Subgraphs</strong>: For each identified subgraph, calculate the equivalent resistance and reduce the subgraph to a single edge.
-- <strong>Repeat the Process</strong>: Once a subgraph is simplified, recheck the remaining part of the graph for further series or parallel combinations. This iterative process continues until the entire graph is reduced to a single equivalent resistance.</p>
-<hr/>
-<h3 id="option-2-advanced-task-full-implementation"><strong>Option 2: Advanced Task – Full Implementation</strong></h3>
-<p>For this task, we would implement the algorithm in Python, leveraging the <strong>NetworkX</strong> library for graph manipulation. Here's how the implementation could be structured:</p>
-<ol>
-<li><strong>Input Format</strong>:</li>
-<li>
-<p>The input will be a graph where nodes represent junctions and edges represent resistors with their resistance values.</p>
-</li>
-<li>
-<p><strong>Output</strong>:</p>
-</li>
-<li>
-<p>The output will be the equivalent resistance of the entire circuit.</p>
-</li>
-<li>
-<p><strong>Handling Different Configurations</strong>:</p>
-</li>
-<li>The algorithm will detect series and parallel connections iteratively using graph traversal techniques.</li>
-</ol>
-<hr/>
-<h3 id="python-code-implementation-using-networkx"><strong>Python Code Implementation using NetworkX</strong></h3>
-<pre><code class="language-python">import networkx as nx
-
-def calculate_series_resistance(R1, R2):
-    return R1 + R2
-
-def calculate_parallel_resistance(R1, R2):
-    return (R1 * R2) / (R1 + R2)
-
-def find_series_parallel_connections(G):
-    series_edges = []
-    parallel_edges = []
-
-    # Check for series and parallel edges
-    for u, v, data in G.edges(data=True):
-        if data['resistance'] == 0:  # Zero resistance means a short circuit
-            continue
-        neighbors_u = list(G.neighbors(u))
-        neighbors_v = list(G.neighbors(v))
-        if len(neighbors_u) == 1 and len(neighbors_v) == 1:
-            series_edges.append((u, v))
-        elif len(neighbors_u) &gt; 1 and len(neighbors_v) &gt; 1:
-            parallel_edges.append((u, v))
-
-    return series_edges, parallel_edges
-
-def reduce_graph(G):
-    while len(G.nodes) &gt; 1:
-        series_edges, parallel_edges = find_series_parallel_connections(G)
-
-        # Reduce series edges
-        for u, v in series_edges:
-            resistance_u_v = calculate_series_resistance(G[u][v]['resistance'], G[u][v]['resistance'])
-            G.add_edge(u, v, resistance=resistance_u_v)
-            G.remove_edge(u, v)
-
-        # Reduce parallel edges
-        for u, v in parallel_edges:
-            resistance_u_v = calculate_parallel_resistance(G[u][v]['resistance'], G[u][v]['resistance'])
-            G.add_edge(u, v, resistance=resistance_u_v)
-            G.remove_edge(u, v)
-
-    return G
-
-# Test the implementation with a simple circuit
-G = nx.Graph()
-G.add_edge(0, 1, resistance=5)  # Resistor between node 0 and node 1
-G.add_edge(1, 2, resistance=10) # Resistor between node 1 and node 2
-G.add_edge(2, 3, resistance=20) # Resistor between node 2 and node 3
-
-final_graph = reduce_graph(G)
-print("Final equivalent resistance:", final_graph[0, 3]['resistance'])
+<p><img alt="alt text" src="../image.png"/></p>
+<h2 id="5-test-examples">🧪 <strong>5. Test Examples</strong></h2>
+<h3 id="example-1-series-circuit">⚡ Example 1: Series Circuit</h3>
+<pre><code class="language-python">G = nx.MultiGraph()
+G.add_edge('A', 'C', resistance=10)
+G.add_edge('C', 'B', resistance=20)
 </code></pre>
-<h3 id="explanation-of-code"><strong>Explanation of Code</strong>:</h3>
-<ul>
-<li><strong>Graph Representation</strong>: The circuit is represented as an undirected graph where each edge has a resistance value.</li>
-<li><strong><code>reduce_graph</code> Function</strong>: This function iterates over the graph, detecting series and parallel connections and reducing them until only one node remains, representing the total equivalent resistance.</li>
-</ul>
-<h3 id="test-cases-and-example-outputs"><strong>Test Cases and Example Outputs</strong>:</h3>
-<ol>
-<li><strong>Simple Series Circuit</strong>:</li>
-<li>Resistor values: 5 Ω, 10 Ω, 20 Ω.</li>
-<li>
-<p>Output: The total resistance will be <span class="arithmatex">\( 5 + 10 + 20 = 35 \, \Omega \)</span>.</p>
-</li>
-<li>
-<p><strong>Simple Parallel Circuit</strong>:</p>
-</li>
-<li>Resistor values: 5 Ω and 10 Ω in parallel.</li>
-<li>Output: The total resistance will be <span class="arithmatex">\( \frac{5 \times 10}{5 + 10} = 3.33 \, \Omega \)</span>.</li>
-</ol>
+<p>➡ Result: <span class="arithmatex">\( R_{\text{eq}} = 30 \, \Omega \)</span></p>
 <hr/>
-<h3 id="efficiency-analysis"><strong>Efficiency Analysis</strong></h3>
+<h3 id="example-2-parallel-circuit">🔁 Example 2: Parallel Circuit</h3>
+<pre><code class="language-python">G = nx.MultiGraph()
+G.add_edge('A', 'B', resistance=10)
+G.add_edge('A', 'B', resistance=20)
+</code></pre>
+<p>➡ Result: <span class="arithmatex">\( R_{\text{eq}} = \frac{1}{\frac{1}{10} + \frac{1}{20}} = 6.67 \, \Omega \)</span></p>
+<hr/>
+<h3 id="example-3-nested-configuration">🧠 Example 3: Nested Configuration</h3>
+<pre><code class="language-python">G = nx.MultiGraph()
+G.add_edge('A', 'X', resistance=5)
+G.add_edge('X', 'B', resistance=5)
+G.add_edge('A', 'B', resistance=10)
+</code></pre>
+<p>➡ Series path: 5 + 5 = 10 → Parallel with 10<br/>
+Final <span class="arithmatex">\( R_{\text{eq}} = 5 \, \Omega \)</span></p>
+<hr/>
+<h2 id="6-visualization">📈 <strong>6. Visualization</strong></h2>
+<p>Each step of simplification is visualized using <code>matplotlib</code>, helping to trace the collapse of the network from a full graph into a single resistor.</p>
+<hr/>
+<h2 id="7-efficiency-and-improvements">🧩 <strong>7. Efficiency and Improvements</strong></h2>
+<h3 id="complexity">💡 Complexity:</h3>
 <ul>
-<li><strong>Time Complexity</strong>: The algorithm's time complexity depends on the number of nodes and edges in the graph. For each iteration, the graph is traversed to find series and parallel connections, making it O(E), where E is the number of edges.</li>
-<li><strong>Potential Improvements</strong>: Optimizations could be made by using more efficient graph traversal techniques or by precomputing possible reductions in more structured circuits.</li>
+<li><strong>Each iteration</strong> of simplification runs in approximately <span class="arithmatex">\( O(n) \)</span> over nodes and edges.</li>
+<li>Efficient for small to medium circuits.</li>
+</ul>
+<h3 id="improvements">🚀 Improvements:</h3>
+<ul>
+<li>Implement <strong>Kirchhoff’s Laws</strong> and use <strong>matrix methods</strong> for large networks.</li>
+<li>Add <strong>support for voltage/current sources</strong> for full circuit analysis.</li>
+<li>Integrate with symbolic solvers like <code>sympy</code> for symbolic reduction.</li>
 </ul>
 <hr/>
-<h3 id="conclusion"><strong>Conclusion</strong></h3>
-<p>Graph theory provides a structured approach to calculating equivalent resistance in electrical circuits. By representing the circuit as a graph and reducing series and parallel connections iteratively, the algorithm can handle even complex configurations. This method simplifies the process of analyzing circuits and can be easily automated for use in circuit simulation tools.</p>
+<h2 id="8-real-world-applications">🧲 <strong>8. Real-World Applications</strong></h2>
+<ul>
+<li><strong>Circuit Design Tools</strong>: Auto-reducing complex resistor networks.</li>
+<li><strong>Optimization Algorithms</strong>: Finding paths of least resistance.</li>
+<li><strong>Education</strong>: Teaching simplification via interactive simulations.</li>
+<li><strong>Network Analysis</strong>: Modeling traffic, fluid flow, or thermal resistance.</li>
+</ul>
+<hr/>
+<h2 id="9-conclusion">✅ <strong>9. Conclusion</strong></h2>
+<p>Using <strong>graph theory</strong>, we've built an automated system that:
+- Models circuits as graphs,
+- Reduces them through series and parallel rules,
+- Outputs equivalent resistance — even in <strong>complex, nested configurations</strong>.</p>
+<p>This approach gives both computational power and conceptual clarity — a true fusion of <strong>physics and computer science</strong>.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
